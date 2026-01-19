@@ -18,17 +18,17 @@ type HomeSiderSegmentedProps = {
 export const HomeSiderSegmented = ({ className, ...props }: HomeSiderSegmentedProps) => {
   const options: OptionType<HomeSiderSegmentType>[] = [
     {
-      label: '站点概览',
+      label: 'サイト概要',
       value: SegmentTypeEnum.INFO,
       icon: RiDashboard3Line,
     },
     {
-      label: '文章目录',
+      label: '記事の目次',
       value: SegmentTypeEnum.DIRECTORY,
       icon: RiListOrdered2,
     },
     {
-      label: '系列文章',
+      label: 'シリーズ記事',
       value: SegmentTypeEnum.SERIES,
       icon: RiArticleLine,
     },

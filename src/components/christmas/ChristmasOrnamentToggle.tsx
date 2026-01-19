@@ -245,7 +245,7 @@ export function ChristmasOrnamentToggle() {
             onKeyDown={handleKeyDown}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            aria-label={isEnabled ? '关闭圣诞模式' : '开启圣诞模式'}
+            aria-label={isEnabled ? 'クリスマスモードをオフ' : 'クリスマスモードをオン'}
             aria-pressed={isEnabled}
             type="button"
           >
@@ -263,7 +263,7 @@ export function ChristmasOrnamentToggle() {
                   className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2"
                 >
                   <div className="whitespace-nowrap rounded-full border border-white/10 bg-red-950/90 px-3 py-1 font-medium text-[10px] text-white shadow-md">
-                    {isEnabled ? '下拉关闭' : '下拉开启'}
+                    {isEnabled ? '下に引いてオフ' : '下に引いてオン'}
                   </div>
                 </motion.div>
               )}

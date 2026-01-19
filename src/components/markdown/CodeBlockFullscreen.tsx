@@ -210,13 +210,13 @@ export default function CodeBlockFullscreen() {
                         )}
                       >
                         {copied ? <CheckIcon /> : <CopyIcon />}
-                        <span className="text-sm">{copied ? '已复制' : '复制'}</span>
+                        <span className="text-sm">{copied ? 'コピー済' : 'コピー'}</span>
                       </button>
                       <button
                         type="button"
                         onClick={handleClose}
                         className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                        aria-label="关闭"
+                        aria-label="閉じる"
                       >
                         <CloseIcon className="h-5 w-5" />
                       </button>

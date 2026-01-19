@@ -41,7 +41,7 @@ export function TableOfContents({ defaultExpanded = false, enableNumbering = tru
   if (headings.length === 0) {
     return (
       <div className="py-6 text-center text-muted-foreground">
-        <div className="text-sm">暂无目录</div>
+        <div className="text-sm">目次なし</div>
       </div>
     );
   }
@@ -49,7 +49,7 @@ export function TableOfContents({ defaultExpanded = false, enableNumbering = tru
   return (
     <nav
       className={`toc-container max-h-[90dvh] overflow-auto ${enableNumbering ? '' : 'toc-no-numbering'}`}
-      aria-label="文章目录"
+      aria-label="記事の目次"
     >
       <div className="space-y-1 pr-2">
         <HeadingList

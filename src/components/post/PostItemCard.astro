@@ -109,11 +109,11 @@ const lqipProps = getLqipProps(finalCover);
         }
         <p class="flex-center gap-1">
           <Icon name="fa6-solid:pen-nib" />
-          {readState?.words} 字
+          {readState?.words} 文字
         </p>
         <button
           class="flex-center gap-1 md:hidden"
-          title={`预计阅读时长: ${readState?.minutes} min`}
+          title={`推定読了時間: ${readState?.minutes} min`}
           data-tooltip-placement="top"
         >
           <Icon name="fa6-solid:clock" />
@@ -132,7 +132,7 @@ const lqipProps = getLqipProps(finalCover);
           isDraft && (
             <Badge className="bg-yellow-700 border border-yellow-600/20 gap-1 text-white shrink-0 hover:bg-yellow-500 whitespace-nowrap transition-colors duration-300 ">
               <Icon name="fa6-solid:file-pen" class="h-3 w-3" />
-              草稿
+              下書き
             </Badge>
           )
         }

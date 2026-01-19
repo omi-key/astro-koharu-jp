@@ -23,7 +23,7 @@ function TweetEmbed({ tweetId }: TweetEmbedProps) {
 
   if (!mounted) {
     return (
-      <output className="my-6 flex justify-center" aria-busy="true" aria-label="正在加载 Tweet">
+      <output className="my-6 flex justify-center" aria-busy="true" aria-label="Tweet を読み込み中">
         <div className="w-full max-w-[550px] animate-pulse rounded-xl bg-muted/50 p-4">
           <div className="mb-2 flex items-center gap-2">
             <div className="h-12 w-12 rounded-full bg-muted"></div>

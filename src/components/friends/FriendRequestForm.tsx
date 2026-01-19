@@ -25,10 +25,10 @@ export default function FriendRequestForm() {
   const { copied, copy } = useClipboard({ timeout: 2000 });
 
   const generateText = useCallback(() => {
-    return `site: ${formData.site || '站点名称'}
+    return `site: ${formData.site || 'サイト名'}
 url: ${formData.url || 'https://example.com'}
-owner: ${formData.owner || '您的昵称'}
-desc: ${formData.desc || '站点描述'}
+owner: ${formData.owner || 'ニックネーム'}
+desc: ${formData.desc || 'サイト説明'}
 image: ${formData.image || 'https://example.com/avatar.jpg'}
 color: "${formData.color || '#ffc0cb'}"`;
   }, [formData]);
@@ -62,7 +62,7 @@ color: "${formData.color || '#ffc0cb'}"`;
             <div className="mb-6">
               <h2 className="mb-2 flex items-center gap-2 font-black text-2xl text-gray-800 dark:text-white">
                 <SakuraSVG className="size-6 animate-spin text-[#FFC0CB] duration-10000" />
-                申请友链
+                相互リンク申請
               </h2>
               <p className="font-medium text-gray-500 text-sm dark:text-gray-400">{friendsIntro.applyDesc}</p>
             </div>
@@ -71,7 +71,7 @@ color: "${formData.color || '#ffc0cb'}"`;
               <div className="grid grid-cols-2 gap-4">
                 <div className="group relative">
                   <label htmlFor="friend-site" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                    站点名称
+                    サイト名
                   </label>
                   <input
                     id="friend-site"
@@ -80,7 +80,7 @@ color: "${formData.color || '#ffc0cb'}"`;
                     value={formData.site}
                     onChange={handleChange}
                     className="w-full rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                    placeholder="我的博客"
+                    placeholder="私のブログ"
                   />
                 </div>
                 <div className="group relative">
@@ -88,7 +88,7 @@ color: "${formData.color || '#ffc0cb'}"`;
                     htmlFor="friend-owner"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    昵称
+                    ニックネーム
                   </label>
                   <input
                     id="friend-owner"
@@ -97,14 +97,14 @@ color: "${formData.color || '#ffc0cb'}"`;
                     value={formData.owner}
                     onChange={handleChange}
                     className="w-full rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                    placeholder="您的昵称"
+                    placeholder="あなたのニックネーム"
                   />
                 </div>
               </div>
 
               <div className="group relative">
                 <label htmlFor="friend-url" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                  站点链接
+                  サイトURL
                 </label>
                 <input
                   id="friend-url"
@@ -119,7 +119,7 @@ color: "${formData.color || '#ffc0cb'}"`;
 
               <div className="group relative">
                 <label htmlFor="friend-desc" className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide">
-                  站点描述
+                  サイト説明
                 </label>
                 <textarea
                   id="friend-desc"
@@ -128,7 +128,7 @@ color: "${formData.color || '#ffc0cb'}"`;
                   onChange={handleChange}
                   rows={2}
                   className="w-full resize-none rounded-xl border-2 border-gray-100 bg-gray-50/50 px-4 py-2.5 font-bold text-gray-700 text-sm transition-all focus:border-pink-300 focus:bg-white focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-200 dark:focus:border-pink-700 dark:focus:bg-gray-800 dark:focus:ring-pink-900/30"
-                  placeholder="一句话描述..."
+                  placeholder="一言で説明..."
                 />
               </div>
 
@@ -138,7 +138,7 @@ color: "${formData.color || '#ffc0cb'}"`;
                     htmlFor="friend-image"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    头像链接
+                    アバターURL
                   </label>
                   <input
                     id="friend-image"
@@ -155,7 +155,7 @@ color: "${formData.color || '#ffc0cb'}"`;
                     htmlFor="friend-color"
                     className="mb-1.5 block font-bold text-gray-400 text-xs uppercase tracking-wide"
                   >
-                    主题色
+                    テーマカラー
                   </label>
                   <div className="flex items-center gap-3">
                     <div className="relative h-10 w-10 overflow-hidden rounded-xl border-2 border-gray-100 shadow-sm transition-transform hover:scale-105 dark:border-gray-700">
@@ -183,14 +183,14 @@ color: "${formData.color || '#ffc0cb'}"`;
           {/* Right Side: Preview / Code */}
           <div className="relative flex flex-col justify-center rounded-xl bg-gray-50 p-6 md:p-3 dark:bg-gray-800/50">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-bold text-xl uppercase tracking-wider">配置预览</h3>
+              <h3 className="font-bold text-xl uppercase tracking-wider">設定プレビュー</h3>
               <button
                 type="button"
                 onClick={handleCopy}
                 className="group relative px-3 py-2 font-bold text-base transition-transform hover:-translate-y-1 dark:text-white"
               >
                 <div className="absolute inset-0 rotate-[1deg] rounded-lg border-2 border-foreground border-dashed transition-all group-hover:rotate-0 dark:border-white"></div>
-                {copied ? '已复制!' : '复制配置'}
+                {copied ? 'コピーしました!' : '設定をコピー'}
               </button>
             </div>
 
@@ -201,7 +201,7 @@ color: "${formData.color || '#ffc0cb'}"`;
             </div>
 
             <div className="mt-6 flex items-center gap-3 rounded-xl bg-pink-50 p-4 font-medium text-pink-600 text-xs dark:bg-pink-900/20 dark:text-pink-300">
-              提示: 复制上方代码并在下方评论区粘贴发送即可，我会收到的～
+              ヒント: 上のコードをコピーして、下のコメント欄に貼り付けて送信してください。届きます〜
             </div>
           </div>
         </div>
