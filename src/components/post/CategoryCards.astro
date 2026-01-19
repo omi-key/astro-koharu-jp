@@ -113,8 +113,8 @@ const categoryPosts: CategoryWithPosts[] = await Promise.all(
               ) : null}
               <Fragment>
                 <Icon name="gg:loadbar-doc" class="mr-0.5 text-base" />
-                {categoryInfo?.children?.length ? `${categoryInfo.children.length} 个子分类，` : ''}
-                {category.posts?.length} 篇文章
+                {categoryInfo?.children?.length ? `${categoryInfo.children.length} 個のサブカテゴリ、` : ''}
+                {category.posts?.length} 件の記事
               </Fragment>
             </p>
             <a href={categoryLink} aria-label="more info" class="absolute right-0 bottom-0">

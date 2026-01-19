@@ -63,15 +63,15 @@ export interface SummaryPanelProps {
 
 const SOURCE_CONFIG: Record<SummarySource, { label: string; icon: ReactNode }> = {
   description: {
-    label: '人工摘要',
+    label: '手動の要約',
     icon: <RiBook2Fill className="size-4 text-primary" />,
   },
   ai: {
-    label: 'AI 摘要',
+    label: 'AI 要約',
     icon: <MingcuteAiFillSvg className="size-4 text-primary" />,
   },
   auto: {
-    label: '摘要',
+    label: '要約',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

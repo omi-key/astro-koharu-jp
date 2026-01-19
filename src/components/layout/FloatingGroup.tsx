@@ -97,21 +97,26 @@ export default function FloatingGroup() {
             transition={{ duration: 0.15, ease: 'easeInOut' }}
           >
             {christmasConfig.enabled && (
-              <FloatingButton onClick={toggleChristmas} ariaLabel="切换圣诞特效" title="切换圣诞特效">
+              <FloatingButton onClick={toggleChristmas} ariaLabel="クリスマスエフェクト切替" title="クリスマスエフェクト切替">
                 <Icon icon={isChristmasEnabled ? 'ri:snowy-fill' : 'ri:snowy-line'} className="h-5 w-5" />
               </FloatingButton>
             )}
-            <FloatingButton onClick={scrollToTop} ariaLabel="回到顶部" title="回到顶部">
+            <FloatingButton onClick={scrollToTop} ariaLabel="トップに戻る" title="トップに戻る">
               <Icon icon="ri:arrow-up-s-line" className="h-5 w-5" />
             </FloatingButton>
-            <FloatingButton onClick={scrollToBottom} ariaLabel="滚到底部" title="滚到底部">
+            <FloatingButton onClick={scrollToBottom} ariaLabel="最下部へスクロール" title="最下部へスクロール">
               <Icon icon="ri:arrow-down-s-line" className="h-5 w-5" />
             </FloatingButton>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <FloatingButton onClick={toggleExpand} ariaLabel="展开/收起工具栏" title="展开/收起工具栏" className="size-9 flex-center">
+      <FloatingButton
+        onClick={toggleExpand}
+        ariaLabel="ツールバーを展開/折りたたむ"
+        title="ツールバーを展開/折りたたむ"
+        className="size-9 flex-center"
+      >
         <Icon icon={isExpanded ? 'ri:close-large-fill' : 'ri:magic-fill'} className="size-4" />
       </FloatingButton>
     </motion.div>

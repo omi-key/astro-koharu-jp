@@ -55,7 +55,7 @@ const DropdownNavComponent = ({ item, className }: DropdownNavProps) => {
         )}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        aria-label={`${name}菜单`}
+        aria-label={`${name}メニュー`}
       >
         {icon && <Icon icon={icon} className="mr-1.5" />}
         {name}

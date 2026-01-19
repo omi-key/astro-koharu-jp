@@ -18,7 +18,7 @@ import {
   readAnnouncementIds,
 } from '@store/announcement';
 import { format } from 'date-fns';
-import { zhCN } from 'date-fns/locale';
+import { ja } from 'date-fns/locale';
 import { AnimatePresence, motion } from 'motion/react';
 import type { Announcement } from '@/types/announcement';
 import { getAnnouncementColor, getAnnouncementIcon } from './AnnouncementToaster';
@@ -26,7 +26,7 @@ import { getAnnouncementColor, getAnnouncementIcon } from './AnnouncementToaster
 function formatDate(dateStr?: string): string {
   if (!dateStr) return '';
   try {
-    return format(new Date(dateStr), 'MM/dd', { locale: zhCN });
+    return format(new Date(dateStr), 'MM/dd', { locale: ja });
   } catch {
     return '';
   }
@@ -106,7 +106,7 @@ function TimelineItem({
                 className="shrink-0 rounded px-1 py-0.5 font-medium text-[10px] text-white md:px-1.5 md:text-xs"
                 style={{ backgroundColor: color }}
               >
-                新
+                NEW
               </span>
             )}
           </div>
@@ -124,7 +124,7 @@ function TimelineItem({
               style={{ backgroundColor: `${color}15`, color }}
               onClick={(e) => e.stopPropagation()}
             >
-              {announcement.link.text ?? '了解更多'}
+              {announcement.link.text ?? '詳細を見る'}
               <Icon icon="ri:arrow-right-s-line" className="h-3.5 w-3.5 md:h-4 md:w-4" />
             </a>
           )}
@@ -172,10 +172,10 @@ export default function AnnouncementListPopup() {
                   <Icon icon="ri:notification-3-line" className="h-4 w-4 text-primary md:h-5 md:w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm md:text-base">公告</h3>
+                  <h3 className="font-semibold text-sm md:text-base">お知らせ</h3>
                   <p className="text-[10px] text-muted-foreground md:text-xs">
-                    {announcements.length} 条公告
-                    {hasUnread && <span className="text-primary"> · {unreadCount} 条未读</span>}
+                    {announcements.length} 件のお知らせ
+                    {hasUnread && <span className="text-primary"> · {unreadCount} 件未読</span>}
                   </p>
                 </div>
               </div>
@@ -186,13 +186,13 @@ export default function AnnouncementListPopup() {
                     className="rounded-md bg-primary/10 px-2 py-1 text-[10px] text-primary transition-colors hover:bg-primary/20 md:rounded-lg md:px-3 md:py-1.5 md:text-xs"
                     type="button"
                   >
-                    全部已读
+                    すべて既読
                   </button>
                 )}
                 <button
                   onClick={closeAnnouncementList}
                   className="rounded-md p-1.5 transition-colors hover:bg-black/5 md:rounded-lg md:p-2 dark:hover:bg-white/10"
-                  aria-label="关闭"
+                  aria-label="閉じる"
                   type="button"
                 >
                   <Icon icon="ri:close-line" className="h-4 w-4 md:h-5 md:w-5" />
@@ -205,8 +205,8 @@ export default function AnnouncementListPopup() {
               {announcements.length === 0 ? (
                 <div className="py-8 text-center text-muted-foreground md:py-12">
                   <Icon icon="ri:notification-off-line" className="mx-auto mb-2 h-12 w-12 opacity-20 md:mb-3 md:h-16 md:w-16" />
-                  <p className="font-medium text-sm md:text-base">暂无公告</p>
-                  <p className="mt-1 text-xs opacity-70 md:text-sm">有新公告时会在这里显示</p>
+                  <p className="font-medium text-sm md:text-base">お知らせはありません</p>
+                  <p className="mt-1 text-xs opacity-70 md:text-sm">新しいお知らせがある時はここに表示されます</p>
                 </div>
               ) : (
                 <div>

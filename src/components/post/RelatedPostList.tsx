@@ -21,7 +21,7 @@ export default function RelatedPostList({ posts, fallbackPool, fallbackCount, st
   }, [fallbackPool, fallbackCount]);
 
   const displayPosts = hasRelatedPosts ? posts : fallbackPosts;
-  const title = hasRelatedPosts ? '相关文章' : '';
+  const title = hasRelatedPosts ? '関連記事' : '';
 
   if (displayPosts.length === 0) {
     return null;

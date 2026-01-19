@@ -32,13 +32,13 @@ export default function PostFooterLists({ allPosts, relatedPosts, leftCount, rig
     };
   }, [allPosts, relatedPosts, leftCount, rightCount]);
 
-  const rightTitle = hasRelatedPosts ? '相关文章' : '';
+  const rightTitle = hasRelatedPosts ? '関連記事' : '';
 
   return (
     <>
       {/* Left side: Random posts */}
       <div className="flex flex-col gap-4">
-        <h2 className="font-semibold text-2xl text-foreground/80">随机文章</h2>
+        <h2 className="font-semibold text-2xl text-foreground/80">ランダム記事</h2>
         <div className="flex flex-col gap-2">
           {leftPosts.map((post, index) => (
             <a

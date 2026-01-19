@@ -15,7 +15,7 @@ interface SeriesPostListProps {
 
 export function SeriesPostList({ posts, currentPostSlug, className }: SeriesPostListProps) {
   if (!posts?.length) {
-    return <div className="py-8 text-center text-muted-foreground text-sm">暂无系列文章</div>;
+    return <div className="py-8 text-center text-muted-foreground text-sm">シリーズ記事はありません</div>;
   }
 
   return (
