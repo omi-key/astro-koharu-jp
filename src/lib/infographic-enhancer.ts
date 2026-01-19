@@ -112,15 +112,15 @@ async function ensureFontRegistered(): Promise<void> {
   const { registerFont } = await import('@antv/infographic');
 
   registerFont({
-    fontFamily: '寒蝉全圆体',
-    name: '寒蝉全圆体',
+    fontFamily: 'Kosugi Maru',
+    name: 'Kosugi Maru',
     baseUrl: '/fonts/ChillRoundFRegular/result.css',
     fontWeight: { regular: 'regular' },
   });
 
   registerFont({
-    fontFamily: '寒蝉全圆体',
-    name: '寒蝉全圆体 Bold',
+    fontFamily: 'Kosugi Maru',
+    name: 'Kosugi Maru Bold',
     baseUrl: '/fonts/ChillRoundFBold/result.css',
     fontWeight: { bold: 'bold' },
   });
@@ -152,10 +152,10 @@ async function renderInfographic(container: HTMLElement, source: string): Promis
 theme
   base
     text
-      font-family 寒蝉全圆体
+      font-family Kosugi Maru
   item
     label
-      font-family 寒蝉全圆体
+      font-family Kosugi Maru
 `;
   const sourceWithFont = `${source}\n${fontConfig}`;
 
@@ -378,10 +378,10 @@ async function reRenderAllInfographics(): Promise<void> {
 theme
   base
     text
-      font-family 寒蝉全圆体
+      font-family Kosugi Maru
   item
     label
-      font-family 寒蝉全圆体
+      font-family Kosugi Maru
 `;
 
   for (const [, entry] of infographicInstances) {
