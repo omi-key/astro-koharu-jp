@@ -101,10 +101,10 @@ export default function FloatingGroup() {
                 <Icon icon={isChristmasEnabled ? 'ri:snowy-fill' : 'ri:snowy-line'} className="h-5 w-5" />
               </FloatingButton>
             )}
-            <FloatingButton onClick={scrollToTop} ariaLabel="トップに戻る" title="トップに戻る">
+            <FloatingButton onClick={scrollToTop} ariaLabel="最上部へ" title="最上部へ">
               <Icon icon="ri:arrow-up-s-line" className="h-5 w-5" />
             </FloatingButton>
-            <FloatingButton onClick={scrollToBottom} ariaLabel="最下部へスクロール" title="最下部へスクロール">
+            <FloatingButton onClick={scrollToBottom} ariaLabel="最下部へ" title="最下部へ">
               <Icon icon="ri:arrow-down-s-line" className="h-5 w-5" />
             </FloatingButton>
           </motion.div>

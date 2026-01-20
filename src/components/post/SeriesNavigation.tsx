@@ -72,12 +72,12 @@ export function SeriesNavigation({ prevPost, nextPost, className }: SeriesNaviga
             'flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 transition-colors',
             'text-muted-foreground text-xs hover:bg-accent hover:text-primary',
           )}
-          title="トップに戻る"
-          aria-label="トップに戻る"
+          title="最上部へ"
+          aria-label="最上部へ"
           suppressHydrationWarning
         >
           <RiArrowUpSLine className="h-4 w-4" />
-          トップに戻る
+          最上部へ
         </button>
         <button
           type="button"
@@ -86,12 +86,12 @@ export function SeriesNavigation({ prevPost, nextPost, className }: SeriesNaviga
             'flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 transition-colors',
             'text-muted-foreground text-xs hover:bg-accent hover:text-primary',
           )}
-          title="最下部へスクロール"
-          aria-label="最下部へスクロール"
+          title="最下部へ"
+          aria-label="最下部へ"
           suppressHydrationWarning
         >
           <RiArrowDownSLine className="h-4 w-4" />
-          最下部へスクロール
+          最下部へ
         </button>
       </div>
     </div>

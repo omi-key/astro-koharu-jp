@@ -198,7 +198,7 @@ export const socialConfig: SocialConfig = yamlConfig.social ?? {};
 const { title, alternate, subtitle } = siteConfig;
 
 export const seoConfig = {
-  title: `${alternate ? `${alternate} = ` : ''}${title}${subtitle ? ` = ${subtitle}` : ''}`,
+  title: title,
   description: siteConfig.description,
   keywords: siteConfig?.keywords?.join(',') ?? '',
   url: siteConfig.site,
