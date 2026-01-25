@@ -332,43 +332,21 @@ export async function getHomeHighlightedPosts(): Promise<BlogPost[]> {
 }
 
 /**
- * 优化的首页数据获取 - 单次遍历获取所有需要的数据
- * @returns 包含高亮文章、置顶文章和普通文章的对象
+ * 首页数据获取 - 按 sticky 属性分组
+ * FeaturedSeries の記事も通常の記事として扱い、sticky プロパティのみでピン留め判定する
+ * @returns 包含置顶文章和普通文章的对象
  */
 export async function getHomePagePosts(): Promise<{
-  highlightedPosts: BlogPost[];
   stickyPosts: BlogPost[];
   regularPosts: BlogPost[];
 }> {
   const allPosts = await getSortedPosts();
-  const highlightedSeries = getEnabledSeries().filter((series) => series.highlightOnHome !== false);
-  const categoryNames = getFeaturedCategoryNames();
-
-  // 用于追踪每个高亮系列的最新文章
-  const seriesLatestMap = new Map<string, BlogPost>();
 
   const stickyPosts: BlogPost[] = [];
   const regularPosts: BlogPost[] = [];
 
-  // 单次遍历所有文章
+  // すべての記事を sticky プロパティのみで分類
   for (const post of allPosts) {
-    // 检查是否属于任何 featured 系列
-    const isFeatured = categoryNames.some((catName) => isPostInCategory(post, catName));
-
-    if (isFeatured) {
-      // 检查是否属于高亮系列，并记录最新文章
-      for (const series of highlightedSeries) {
-        if (isPostInCategory(post, series.categoryName)) {
-          if (!seriesLatestMap.has(series.categoryName)) {
-            seriesLatestMap.set(series.categoryName, post);
-          }
-          break;
-        }
-      }
-      // 跳过所有 featured 系列文章，不加入普通列表
-      continue;
-    }
-
     if (post.data?.sticky) {
       stickyPosts.push(post);
     } else {
@@ -376,16 +354,7 @@ export async function getHomePagePosts(): Promise<{
     }
   }
 
-  // 提取高亮文章（保持系列定义的顺序）
-  const highlightedPosts: BlogPost[] = [];
-  for (const series of highlightedSeries) {
-    const post = seriesLatestMap.get(series.categoryName);
-    if (post) {
-      highlightedPosts.push(post);
-    }
-  }
-
-  return { highlightedPosts, stickyPosts, regularPosts };
+  return { stickyPosts, regularPosts };
 }
 
 // =============================================================================

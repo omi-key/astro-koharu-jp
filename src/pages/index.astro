@@ -12,11 +12,8 @@ import type { BlogPost } from 'types/blog';
 import CategoryCards from '@/components/post/CategoryCards.astro';
 import Divider from '@/components/ui/divider';
 
-// 使用优化的单次查询获取所有首页数据
-const { highlightedPosts, stickyPosts: normalStickyPosts, regularPosts } = await getHomePagePosts();
-
-// 将高亮系列文章放在置顶列表开头
-const stickyPosts = [...highlightedPosts, ...normalStickyPosts];
+// sticky プロパティのみでピン留めを判定
+const { stickyPosts, regularPosts } = await getHomePagePosts();
 
 // 首页显示前N篇普通文章（不含系列文章）
 const { pageSize } = PAGINATION;
